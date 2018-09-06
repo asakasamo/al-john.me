@@ -12,7 +12,7 @@
          or just navigate using the menu.
       </h4>
 
-      <h4 class="mt-5">- Al-John Sakasamo</h4>
+      <h4 class="mt-5">&mdash; Al-John Sakasamo</h4>
    </div>
 </template>
 

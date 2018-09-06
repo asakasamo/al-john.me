@@ -20,7 +20,7 @@
       </div>
       <div class="card">
 
-         <img class="card-img-top" src="/images/projects/catchoftheday.png" alt="Cetch of the Day" />
+         <img class="card-img-top" src="/images/projects/catchoftheday.png" alt="Catch of the Day" />
          <div class="card-body bg-light p-3">
             <h4 class="card-title">Catch of the Day</h4>
             <p class="card-text">A web store simulator, providing inventory management for authorized users</p>
@@ -105,3 +105,26 @@
       </div>
    </div>
 </template>
+
+<style lang="scss" scoped>
+.flex-cards {
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+}
+
+.flex-cards > * {
+   width: 320px;
+   margin-top: 20px;
+}
+
+.flex-btns {
+   display: flex;
+   justify-content: center;
+}
+
+.card {
+   border: 1px solid #ddd;
+}
+</style>
+
