@@ -23,6 +23,7 @@
 
 .main-content {
    margin-left: 250px;
+   margin-bottom: 100px;
 }
 
 @media (max-width: 990px) {
