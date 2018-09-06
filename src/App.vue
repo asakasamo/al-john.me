@@ -11,6 +11,10 @@
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Roboto|Ubuntu|Nunito");
+#app {
+   overflow: hidden;
+   font-family: "Roboto";
+}
 
 .sidebar {
    position: fixed;
@@ -34,16 +38,18 @@ a {
    transition: all 0.2s;
    color: #999;
 }
-a:hover,
-a:active,
-a:focus {
+a[href] {
    text-decoration: none;
+}
+a:hover,
+a:focus {
+   color: darkblue;
 }
 
 .highlight,
-.highlight:hover,
 .highlight *,
-.highlight *:hover {
+.highlight a[href],
+a.highlight[href] {
    color: #660000;
 }
 </style>

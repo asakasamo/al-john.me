@@ -31,8 +31,6 @@
 export default {
    methods: {
       activeNavClass(route) {
-         console.log(this.$route);
-         console.log(route);
          if (route === this.$route.name) {
             return "highlight";
          }
@@ -44,8 +42,10 @@ export default {
 
 
 <style scoped lang="scss">
-* {
+.sidebar {
    text-align: center;
+   border-right: 1px solid #ddd;
+   min-height: 100vh;
 }
 
 .social div {
