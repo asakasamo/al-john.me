@@ -26,7 +26,7 @@
    margin-bottom: 100px;
 }
 
-@media (max-width: 990px) {
+@media (max-width: 900px) {
    .sidebar {
       left: -250px;
    }
@@ -52,5 +52,31 @@ a:focus {
 .highlight a[href],
 a.highlight[href] {
    color: #660000;
+}
+
+.btn {
+   border-radius: 0;
+}
+
+.btn-primary {
+   color: #fff;
+   background-color: #660000;
+   border-color: #660000;
+   border-radius: 0;
+   &:hover,
+   &:focus,
+   &:active:hover {
+      border-color: #660000;
+      background-color: #880000;
+   }
+}
+
+.btn-secondary {
+   color: #222831;
+   background-color: #fff;
+   border-color: #ccc;
+   &:hover {
+      background-color: #eee;
+   }
 }
 </style>

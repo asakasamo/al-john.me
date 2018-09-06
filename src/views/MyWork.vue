@@ -4,7 +4,7 @@
 
       <div class="flex-cards">
          <div class="card">
-            <img class="card-img-top" src="/images/projects/wemeetup.png" alt="WeMeetup" />
+            <img class="card-img-top" src="@/assets/projects/wemeetup.png" alt="WeMeetup" />
             <div class="card-body bg-light p-3">
                <h4 class="card-title">WeMeetup</h4>
                <p class="card-text">A Meetup clone that lets users organize, register for, and browse meetups</p>
@@ -22,7 +22,7 @@
          </div>
          <div class="card">
 
-            <img class="card-img-top" src="/images/projects/catchoftheday.png" alt="Catch of the Day" />
+            <img class="card-img-top" src="@/assets/projects/catchoftheday.png" alt="Catch of the Day" />
             <div class="card-body bg-light p-3">
                <h4 class="card-title">Catch of the Day</h4>
                <p class="card-text">A web store simulator, providing inventory management for authorized users</p>
@@ -40,7 +40,7 @@
          </div>
          <div class="card">
 
-            <img class="card-img-top" src="/images/projects/prisoner.png" alt="Prisoner's Game of Life" />
+            <img class="card-img-top" src="@/assets/projects/prisoner.png" alt="Prisoner's Game of Life" />
             <div class="card-body bg-light p-3">
                <h4 class="card-title">Prisoner's Game of Life</h4>
                <p class="card-text">A 0-player game applying game theory (The Prisoner's Dilemma) to cellular automata (The
@@ -76,7 +76,7 @@
          </div>
          <div class="card">
 
-            <img class="card-img-top" src="/images/projects/codewars.png" alt="Codewars" />
+            <img class="card-img-top" src="@/assets/projects/codewars.png" alt="Codewars" />
             <div class="card-body bg-light p-3">
                <h4 class="card-title">CodeWars</h4>
                <p class="card-text">Completing programming challenges to achieve code mastery through challenge!</p>
@@ -92,7 +92,7 @@
          </div>
          <div class="card">
 
-            <img class="card-img-top" src="/images/projects/recursion.png" alt="Al-John.me" />
+            <img class="card-img-top" src="@/assets/projects/recursion.png" alt="Al-John.me" />
             <div class="card-body bg-light p-3">
                <h4 class="card-title">Al-John.me</h4>
                <p class="card-text">The website you're currently viewing</p>
@@ -102,7 +102,7 @@
                   <li><strong>Responsive design</strong> using <strong>Bootstrap</strong> &amp; <strong>CSS3</strong></li>
                   <li>Straightforward &amp; effective UI</li>
                </ul>
-               <div class="flex-btns"><a class="btn btn-primary" href="https://localhost/al-john.me">Visit</a></div>
+               <div class="flex-btns"><a class="btn btn-primary" href="/">Visit</a></div>
             </div>
          </div>
       </div>
@@ -110,9 +110,6 @@
 </template>
 
 <style lang="scss" scoped>
-#my-work {
-   padding-bottom: 20px;
-}
 .flex-cards {
    display: flex;
    justify-content: space-around;
@@ -120,8 +117,12 @@
 }
 
 .flex-cards > * {
-   width: 320px;
+   width: 350px;
    margin-top: 20px;
+}
+
+.card-img-top {
+   width: 100%;
 }
 
 .flex-btns {
@@ -131,6 +132,16 @@
 
 .card {
    border: 1px solid #ddd;
+}
+
+.card-body {
+   padding: 10px;
+   border-top: 1px solid #ddd;
+}
+
+.card-title {
+   color: #660000;
+   font-weight: bold;
 }
 </style>
 
