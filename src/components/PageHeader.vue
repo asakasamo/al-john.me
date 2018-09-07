@@ -16,8 +16,8 @@ export default {
 
 <style lang="scss" scoped>
 #page-header {
-   color: #eee;
-   background-color: #660000;
+   color: #fafffd;
+   background-color: #5c2600;
    padding: 15px 40px;
    font-size: 3em;
    font-weight: bold;
@@ -29,7 +29,7 @@ export default {
 
 .menu-toggle {
    &:hover {
-      border-color: #660000;
+      border-color: #5c2600;
    }
 }
 

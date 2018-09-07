@@ -1,7 +1,7 @@
 <template>
    <div class="sidebar">
       <div id="logo">
-         <a href="/" class="highlight">Al-John Sakasamo</a>
+         <span class="highlight">Al-John Sakasamo</span>
          <h4>Software Engineer</h4>
       </div>
 
@@ -42,71 +42,78 @@ export default {
 
 
 <style scoped lang="scss">
+$space: 20px;
+
 .sidebar {
    text-align: center;
    border-right: 1px solid #ddd;
    min-height: 100vh;
+   // padding-top: 39px;
+   padding-top: 53px;
 }
 .active-page {
    font-weight: bold;
 }
 
-.social div {
-   transition: all 0.2s;
-}
-
 #logo {
-   padding: 20px 20px 0 20px;
-}
-
-#logo a {
-   font-size: 2em;
+   padding: 22.5px 10px 0.1px 10px;
+   h4 {
+      font-size: 19px;
+   }
+   span {
+      font-size: 2em;
+      font-weight: bold;
+   }
 }
 
 ul {
    list-style: none;
-   padding: 10px 0;
    border-top: 1px solid #ddd;
    border-bottom: 1px solid #ddd;
-}
-
-nav a {
-   font-size: 2em;
-   line-height: 2.5;
+   margin: 0;
+   padding: 6px 0;
 }
 
 nav {
-   margin: 20px 40px;
+   margin: 20px 35px 85px 35px;
+   padding: $space 0;
+   a {
+      font-size: 1.94em;
+      line-height: 2.6;
+   }
 }
 
 .social {
+   justify-self: flex-end;
    display: flex;
    align-items: center;
    justify-content: center;
    margin-bottom: 10px;
    font-size: 18px;
+   div {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      background-size: 20px 20px;
+      transition: all 0.2s;
+   }
 }
 
-.social div {
-   width: 20px;
-   height: 20px;
-   margin-right: 5px;
-   background-size: 20px 20px;
-}
-
-.social div.lin {
-   background-image: url("../assets/l-in.png");
-}
-
-.social div.git {
-   background-image: url("../assets/github.png");
-}
-
-.social:hover div.lin {
-   background-image: url("../assets/l-in-2.png");
-}
-
-.social:hover div.git {
-   background-image: url("../assets/github-2.png");
+.social {
+   .lin {
+      background-image: url("../assets/l-in.png");
+   }
+   div.git {
+      background-image: url("../assets/github.png");
+   }
+   &:hover {
+      .lin {
+         background-image: url("../assets/l-in-2.png");
+      }
+      .git {
+         background-image: url("../assets/github-2.png");
+      }
+      color: black;
+   }
 }
 </style>

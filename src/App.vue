@@ -14,15 +14,19 @@
 #app {
    overflow: hidden;
    font-family: "Roboto";
+   background-color: #fafffd;
 }
+
+$main: #5c2600;
+$offset: 270px;
 
 .sidebar {
    position: fixed;
-   width: 250px;
+   width: $offset;
 }
 
 .main-content {
-   margin-left: 250px;
+   margin-left: $offset;
    margin-bottom: 100px;
 }
 
@@ -44,14 +48,14 @@ a[href] {
 }
 a:hover,
 a:focus {
-   color: darkblue;
+   color: #f1e8a8;
 }
 
 .highlight,
 .highlight *,
 .highlight a[href],
 a.highlight[href] {
-   color: #660000;
+   color: $main;
 }
 
 .btn {
@@ -60,14 +64,14 @@ a.highlight[href] {
 
 .btn-primary {
    color: #fff;
-   background-color: #660000;
-   border-color: #660000;
+   background-color: $main;
+   border-color: $main;
    border-radius: 0;
    &:hover,
    &:focus,
    &:active:hover {
-      border-color: #660000;
-      background-color: #880000;
+      border-color: $main;
+      background-color: $main;
    }
 }
 
