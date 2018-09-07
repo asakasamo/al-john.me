@@ -32,7 +32,7 @@ export default {
    methods: {
       activeNavClass(route) {
          if (route === this.$route.name) {
-            return "highlight";
+            return "highlight active-page";
          }
          return "";
       }
@@ -46,6 +46,9 @@ export default {
    text-align: center;
    border-right: 1px solid #ddd;
    min-height: 100vh;
+}
+.active-page {
+   font-weight: bold;
 }
 
 .social div {
