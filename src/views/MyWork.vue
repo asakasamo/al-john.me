@@ -3,6 +3,7 @@
       <page-header text="My Work" />
 
       <div class="flex-cards">
+
          <div class="card">
             <img class="card-img-top" src="@/assets/projects/wemeetup.png" alt="WeMeetup" />
             <div class="card-body bg-light p-3">
@@ -16,12 +17,16 @@
                   <li><strong>Responsive</strong> web design using <strong>Vuetify</strong> and <strong>Bootstrap</strong>
                      <strong>4</strong></li>
                </ul>
-               <div class="flex-btns"><a class="btn btn-primary" href="https://wemeetup.localhost/al-john.me">Demo</a><a
-                     class="btn btn-secondary" href="https://github.com/asakasamo/WeMeetup">Source</a></div>
             </div>
-         </div>
-         <div class="card">
+            <div class="space"></div>
+            <div class="flex-btns">
+               <a class="btn btn-primary" href="https://wemeetup.localhost/al-john.me">Demo</a>
+               <a class="btn btn-secondary" href="https://github.com/asakasamo/WeMeetup">Source</a>
+            </div>
 
+         </div>
+
+         <div class="card">
             <img class="card-img-top" src="@/assets/projects/catchoftheday.png" alt="Catch of the Day" />
             <div class="card-body bg-light p-3">
                <h4 class="card-title">Catch of the Day</h4>
@@ -34,12 +39,15 @@
                   <li>Animations using <strong>CSS3</strong> and <strong>React-transition-group</strong></li>
                   <li>Local data storage using <strong>HTML5 Web Storage</strong></li>
                </ul>
-               <div class="flex-btns"><a class="btn btn-primary" href="https://catchoftheday.localhost/al-john.me">Demo</a><a
-                     class="btn btn-secondary" href="https://github.com/asakasamo/Catch-of-the-Day">Source</a></div>
+            </div>
+            <div class="space"></div>
+            <div class="flex-btns">
+               <a class="btn btn-primary" href="https://catchoftheday.localhost/al-john.me">Demo</a>
+               <a class="btn btn-secondary" href="https://github.com/asakasamo/Catch-of-the-Day">Source</a>
             </div>
          </div>
-         <div class="card">
 
+         <div class="card">
             <img class="card-img-top" src="@/assets/projects/prisoner.png" alt="Prisoner's Game of Life" />
             <div class="card-body bg-light p-3">
                <h4 class="card-title">Prisoner's Game of Life</h4>
@@ -52,14 +60,22 @@
                   <li>User input validation using <strong>Vee-validate</strong></li>
                   <li><strong>SCSS</strong> styling with extensive use of <strong>CSS Flexbox</strong></li>
                </ul>
-               <div class="flex-btns"><a class="btn btn-primary" href="https://prisoner.localhost/al-john.me">Demo</a><a
-                     class="btn btn-secondary" href="https://github.com/asakasamo/prisoners-game-of-life">Source</a></div>
+            </div>
+            <div class="space"></div>
+            <div class="flex-btns">
+               <a class="btn btn-primary" href="https://prisoner.localhost/al-john.me">Demo</a>
+               <a class="btn btn-secondary" href="https://github.com/asakasamo/prisoners-game-of-life">Source</a>
             </div>
          </div>
+
          <div class="card">
-            <div class="card-img-top" style="position: relative; padding-bottom: 54%;"><iframe style="position: absolute; top: 0; left: 0;"
-                  src="https://gfycat.com/ifr/AmusingDefenselessCoypu" width="100%" height="100%" frameborder="0" scrolling="no"
-                  allowfullscreen="allowfullscreen"></iframe></div>
+            <div class="card-img-top" style="position: relative; padding-bottom: 54%;">
+               <iframe style="position: absolute; top: 0; left: 0;"
+                  src="https://gfycat.com/ifr/AmusingDefenselessCoypu" 
+                  width="100%" height="100%" frameborder="0" scrolling="no"
+                  allowfullscreen="allowfullscreen">
+               </iframe>
+            </div>
             <div class="card-body bg-light p-3">
                <h4 class="card-title">planAmity</h4>
                <p class="card-text">A project planning &amp; management application</p>
@@ -70,10 +86,14 @@
                   <li><strong>Unit testing/TDD</strong> using <strong>Groovy</strong></li>
                   <li>Detailed Javadoc documentation!</li>
                </ul>
-               <div class="flex-btns"><a class="btn btn-primary" href="https://gfycat.com/ifr/AmusingDefenselessCoypu">Demo</a><a
-                     class="btn btn-secondary" href="https://github.com/asakasamo/PlanAmity">Source</a></div>
+            </div>
+            <div class="space"></div>
+            <div class="flex-btns">
+               <a class="btn btn-primary" href="https://gfycat.com/ifr/AmusingDefenselessCoypu">Demo</a>
+               <a class="btn btn-secondary" href="https://github.com/asakasamo/PlanAmity">Source</a>
             </div>
          </div>
+
          <div class="card">
 
             <img class="card-img-top" src="@/assets/projects/codewars.png" alt="Codewars" />
@@ -86,12 +106,14 @@
                   <li><strong>Languages Trained:</strong> Javascript, Java</li>
                   <li><strong>Completed Kata:</strong> 26</li>
                </ul>
-               <div class="flex-btns"><a class="btn btn-primary" href="https://www.codewars.com/users/asakasamo">Profile</a><a
-                     class="btn btn-secondary" href="https://github.com/asakasamo/Coding-Practice">Source (Samples)</a></div>
+            </div>
+            <div class="space"></div>
+            <div class="flex-btns">
+               <a class="btn btn-primary" href="https://www.codewars.com/users/asakasamo">Profile</a>
+               <a class="btn btn-secondary" href="https://github.com/asakasamo/Coding-Practice">Source (Samples)</a>
             </div>
          </div>
          <div class="card">
-
             <img class="card-img-top" src="@/assets/projects/recursion.png" alt="Al-John.me" />
             <div class="card-body bg-light p-3">
                <h4 class="card-title">Al-John.me</h4>
@@ -102,8 +124,9 @@
                   <li><strong>Responsive design</strong> using <strong>Bootstrap</strong> &amp; <strong>CSS3</strong></li>
                   <li>Straightforward &amp; effective UI</li>
                </ul>
-               <div class="flex-btns"><a class="btn btn-primary" href="/">Visit</a></div>
             </div>
+            <div class="space"></div>
+            <div class="flex-btns"><a class="btn btn-primary" href="/">Visit</a></div>
          </div>
       </div>
    </div>
@@ -128,10 +151,13 @@
 .flex-btns {
    display: flex;
    justify-content: center;
+   margin-bottom: 10px;
 }
 
 .card {
    border: 1px solid #ddd;
+   display: flex;
+   flex-direction: column;
 }
 
 .card-body {
@@ -142,6 +168,10 @@
 .card-title {
    color: #660000;
    font-weight: bold;
+}
+
+.space {
+   flex: 1;
 }
 </style>
 

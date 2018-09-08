@@ -94,27 +94,10 @@ export default {
 .page-row {
    display: flex;
    flex-direction: row;
-   .row-title {
-      min-width: 150px;
-      border-right: 3px solid #666;
-      font-size: 30px;
-      font-weight: bold;
-   }
+   align-items: center;
 
    .row-content {
       padding: 0px 20px;
-   }
-}
-.empty {
-   margin: 15px 0;
-
-   .row-title {
-      border: none !important;
-   }
-   .row-content {
-      border-bottom: 1px solid #ccc;
-      flex: 1;
-      padding: 0;
    }
 }
 
@@ -150,5 +133,11 @@ export default {
    .skills {
       justify-content: space-around;
    }
+}
+
+.picture {
+   width: 40rem;
+   height: 40rem;
+   background-color: yellow;
 }
 </style>

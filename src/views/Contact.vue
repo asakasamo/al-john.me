@@ -4,6 +4,11 @@
 
       <div class="page-content">
          <p>
+            If you have any inquiries or hiring requests, please contact me via any of the following 
+            methods below!
+         </p>
+
+         <p>
             <img class="icon" src="@/assets/email-icon.png" alt="email">
             <strong class="highlight">a.sakasamo 
                <span class="underline">at</span> gmail <span class="underline">dot</span> com</strong>
@@ -33,11 +38,11 @@
 p {
    display: flex;
    align-items: center;
+   font-size: 1.4em;
 }
 
 .page-content {
    padding: 30px 0 0 40px;
-   font-size: 1.4em;
 }
 
 .underline {

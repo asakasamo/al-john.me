@@ -17,7 +17,7 @@ export default {
 <style lang="scss" scoped>
 #page-header {
    color: #fafffd;
-   background-color: #5c2600;
+   background-color: #471e01;
    padding: 15px 40px;
    font-size: 3em;
    font-weight: bold;

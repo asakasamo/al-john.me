@@ -32,7 +32,7 @@ $offset: 270px;
 
 @media (max-width: 900px) {
    .sidebar {
-      left: -250px;
+      left: -$offset;
    }
    .main-content {
       margin-left: 0;

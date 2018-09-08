@@ -99,7 +99,8 @@ nav {
    }
 }
 
-.social {
+a[href].social {
+   color: #666;
    .lin {
       background-image: url("../assets/l-in.png");
    }
