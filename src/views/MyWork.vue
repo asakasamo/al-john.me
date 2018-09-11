@@ -70,7 +70,7 @@
 
          <div class="card">
             <div class="card-img-top" style="position: relative; padding-bottom: 54%;">
-               <iframe style="position: absolute; top: 0; left: 0;"
+               <iframe style="position: absolute; top: 0; left: 0; z-index: 0;"
                   src="https://gfycat.com/ifr/AmusingDefenselessCoypu" 
                   width="100%" height="100%" frameborder="0" scrolling="no"
                   allowfullscreen="allowfullscreen">
@@ -120,8 +120,11 @@
                <p class="card-text">The website you're currently viewing</p>
 
                <ul>
-                  <li><strong>Custom Wordpress</strong> theme built by yours truly</li>
-                  <li><strong>Responsive design</strong> using <strong>Bootstrap</strong> &amp; <strong>CSS3</strong></li>
+                  <li><strong>Custom Website</strong> built in <strong>Vue</strong></li>
+                  <li>
+                     <strong>Responsive design</strong> using <strong>HTML5</strong>, <strong>CSS3</strong>, 
+                     <strong>Bootstrap</strong>, and <strong>Javascript (ES6)</strong>
+                  </li>
                   <li>Straightforward &amp; effective UI</li>
                </ul>
             </div>
@@ -133,6 +136,18 @@
 </template>
 
 <style lang="scss" scoped>
+@media (min-width: 900px) {
+   #my-work {
+      margin-bottom: 30px;
+   }
+}
+
+@media (max-width: 900px) {
+   #my-work {
+      margin-bottom: 5px;
+   }
+}
+
 .flex-cards {
    display: flex;
    justify-content: space-around;
@@ -167,6 +182,7 @@
 
 .card-title {
    font-weight: bold;
+   color: black;
 }
 
 .space {

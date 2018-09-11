@@ -2,9 +2,6 @@
    <div id="app">
       <div class="sidebar" id="sidebar">
          <sidebar />
-      </div>
-
-      <div class="main-content">
          <button :class="[
                'btn', 
                'btn-primary', 
@@ -21,6 +18,9 @@
                   src="https://mdbootstrap.com/img/svg/hamburger7.svg?color=5c2600" 
                   alt="menu">
          </button>
+      </div>
+
+      <div class="main-content">
          <router-view/>
       </div>
    </div>
@@ -46,9 +46,10 @@ export default {
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Roboto|Ubuntu|Nunito");
 #app {
-   overflow: hidden;
+   overflow: auto;
    font-family: "Roboto";
    background-color: #fafffd;
+   -webkit-font-smoothing: antialiased;
 }
 
 $main: #5c2600;
@@ -58,12 +59,11 @@ $offset: 270px;
    position: fixed;
    min-width: $offset;
    background-color: #fafffd;
-   overflow: hidden;
 }
 
 .main-content {
    margin-left: $offset;
-   margin-bottom: 7.143em;
+   // margin-bottom: 7.143em;
 }
 
 @media (max-width: 900px) {
@@ -128,8 +128,10 @@ a.highlight[href] {
 $primary: #502302;
 .menu-toggle {
    position: absolute;
-   right: 20px;
    top: 20px;
+   right: -70px;
+
+   z-index: 999;
 
    background-color: $primary;
    border-color: $primary;

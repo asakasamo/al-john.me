@@ -18,7 +18,7 @@ export default {
    display: flex;
    flex-direction: column;
    align-items: center;
-   margin: 10px;
+   margin: 10px 20px 0 0;
 
    img {
       width: 100px;
@@ -26,6 +26,7 @@ export default {
    }
    p {
       font-size: 18px;
+      font-weight: bold;
    }
 }
 </style>

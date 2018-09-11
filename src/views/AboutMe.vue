@@ -6,7 +6,17 @@
          <div class="page-row">
             <div class="row-content">
                <div v-for="(skill,i) in skillset" :key="i" class="skillset">
-                  <h3 class="skill-header">{{ skill.title }}</h3>
+                  <div style="display: flex; flex-direction: row; align-items: center">
+                     <h3 class="skill-header">
+                        {{ skill.title }}
+                     </h3>
+                     <h3 class="skill-header space">
+                        &nbsp;
+                     </h3>
+                     <h3 class="skill-header dash">
+                        -
+                     </h3>
+                  </div>
                   <div class="skills">
                      <skill-card 
                         v-for="(subskill, n) in skill.skills" 
@@ -87,8 +97,7 @@ export default {
 .page-table {
    display: flex;
    flex-direction: column;
-   padding: 20px;
-   overflow: hidden;
+   padding: 30px 20px 5px 20px;
 }
 
 .page-row {
@@ -107,15 +116,28 @@ export default {
 }
 
 .skill-header {
-   margin: 0 0 10px 0;
+   margin: 0 0 5px 0;
    font-weight: bold;
+   color: black;
+   font-size: 1.94em;
+
+   line-height: 0.9;
+   border-bottom: 2px solid black;
+   &.dash,
+   &.space {
+      border-bottom: 2px solid transparent;
+   }
+   &.space {
+      font-size: 0.3em;
+   }
 }
 
 .skillset {
-   margin-bottom: 20px;
+   margin-bottom: 30px;
    display: flex;
    flex-direction: column;
    justify-content: space-around;
+   align-items: flex-start;
 }
 
 @media (max-width: 900px) {

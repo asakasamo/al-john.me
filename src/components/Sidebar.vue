@@ -116,7 +116,7 @@ a[href].social {
       color: black;
    }
 }
-@media (max-height: 650px) {
+@media (max-height: 700px) {
    .sidebar {
       font-size: 12px;
    }

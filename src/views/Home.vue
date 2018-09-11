@@ -29,7 +29,8 @@
 
 <style lang="scss" scoped>
 $main: #592500;
-$emph: #6e5644;
+$emph: #705543;
+$sig: #542300;
 
 #home {
    text-align: center;
@@ -49,6 +50,7 @@ $emph: #6e5644;
 }
 
 .intro-caption {
+   font-size: 2.143em;
    margin-bottom: 40px;
 }
 
@@ -63,19 +65,29 @@ $emph: #6e5644;
       display: none;
    }
    #home {
-      margin-top: 60px;
+      margin-top: 0;
       padding: 10px;
+      font-size: 10.5px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
    }
 }
 
 .emph {
-   // display: inline-block;
-   // transform: skew(-8deg);
-   // font-size: 0.995em;
    color: $emph;
 }
 
 .highlight.sig {
-   color: $main;
+   color: $sig;
+   font-weight: 900;
+   font-size: 1.65em;
+}
+
+h3 {
+   font-size: 1.65em;
 }
 </style>
