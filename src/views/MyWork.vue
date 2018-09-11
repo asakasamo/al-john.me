@@ -137,15 +137,15 @@
    display: flex;
    justify-content: space-around;
    flex-wrap: wrap;
-}
-
-.flex-cards > * {
-   width: 350px;
-   margin-top: 20px;
+   & > * {
+      width: 350px;
+      margin-top: 20px;
+   }
 }
 
 .card-img-top {
    width: 100%;
+   height: 215px;
 }
 
 .flex-btns {
@@ -166,7 +166,6 @@
 }
 
 .card-title {
-   color: #660000;
    font-weight: bold;
 }
 

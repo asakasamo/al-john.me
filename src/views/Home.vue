@@ -15,8 +15,8 @@
          </h2>
 
          <h3>Check out my 
-            <a href="#">skillset</a> and
-            <a href="#">projects</a>! 
+            <a href="/about">skillset</a> and
+            <a href="/my-work">projects</a>! 
             <br>Or, just navigate the site using the 
             <span class="small-screen">popout menu</span>
             <span class="large-screen">sidebar</span>.
@@ -61,6 +61,10 @@ $emph: #6e5644;
 @media (max-width: 900px) {
    .large-screen {
       display: none;
+   }
+   #home {
+      margin-top: 60px;
+      padding: 10px;
    }
 }
 

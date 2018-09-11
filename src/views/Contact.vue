@@ -3,46 +3,55 @@
       <page-header text="Contact"/>
 
       <div class="page-content">
-         <p>
+         <p class="contact-msg">
             If you have any inquiries or hiring requests, please contact me via any of the following 
-            methods below!
+            methods below.
          </p>
 
-         <p>
-            <img class="icon" src="@/assets/email-icon.png" alt="email">
-            <strong class="highlight">a.sakasamo 
-               <span class="underline">at</span> gmail <span class="underline">dot</span> com</strong>
-         </p>
+         <div class="contact-links">
+            <p>
+               <img class="icon" src="@/assets/email-icon.png" alt="email">
+               <a href="mailto:contact@al-john.me">contact@al-john.me</a>
+            </p>
 
-         <p>
-            <img class="icon" src="@/assets/skype.png" alt="skype">
-            <a href="https://join.skype.com/QplK0tZhcXzg">Al-John Sakasamo</a>
-         </p>
+            <p>
+               <img class="icon" src="@/assets/skype.png" alt="skype">
+               <a href="https://join.skype.com/QplK0tZhcXzg">Al-John Sakasamo</a>
+            </p>
 
-         <p>
-            <img class="icon" src="@/assets/github-icon.png" alt="email">
-            <a href="github.com/asakasamo">github.com/asakasamo</a>
-         </p>
+            <p>
+               <img class="icon" src="@/assets/github-icon.png" alt="email">
+               <a href="github.com/asakasamo">github.com/asakasamo</a>
+            </p>
 
-         <p>
-            <img class="icon" src="@/assets/linkedin.png" alt="linkedin">
-            <a href="linkedin.com/in/asakasamo">linkedin.com/in/asakasamo</a>
-         </p>
-
+            <p>
+               <img class="icon" src="@/assets/linkedin.png" alt="linkedin">
+               <a href="linkedin.com/in/asakasamo">linkedin.com/in/asakasamo</a>
+            </p>
+         </div>
 
       </div>
    </div>
 </template>
 
 <style lang="scss" scoped>
-p {
+.page-content {
    display: flex;
+   flex-direction: column;
    align-items: center;
-   font-size: 1.4em;
+   padding: 0 30px;
 }
 
-.page-content {
-   padding: 30px 0 0 40px;
+.contact-msg {
+   margin: 30px 0;
+   font-size: 1.6em;
+   text-align: center;
+}
+
+.contact-links {
+   display: flex;
+   flex-direction: column;
+   font-size: 1.4em;
 }
 
 .underline {

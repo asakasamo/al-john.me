@@ -40,25 +40,24 @@ export default {
 };
 </script>
 
-
 <style scoped lang="scss">
-$space: 20px;
+$space: 1.429em;
 
 .sidebar {
    text-align: center;
    border-right: 1px solid #ddd;
    min-height: 100vh;
    // padding-top: 39px;
-   padding-top: 53px;
+   padding-top: 3.786em;
 }
 .active-page {
    font-weight: bold;
 }
 
 #logo {
-   padding: 22.5px 10px 0.1px 10px;
+   padding: 1.607em 0.714em 0.00714em 0.714em;
    h4 {
-      font-size: 19px;
+      font-size: 1.357em;
    }
    span {
       font-size: 2em;
@@ -71,11 +70,11 @@ ul {
    border-top: 1px solid #ddd;
    border-bottom: 1px solid #ddd;
    margin: 0;
-   padding: 6px 0;
+   padding: 0.429em 0;
 }
 
 nav {
-   margin: 20px 35px 85px 35px;
+   margin: 1.429em 2.5em 6.071em 2.5em;
    padding: $space 0;
    a {
       font-size: 1.94em;
@@ -88,8 +87,8 @@ nav {
    display: flex;
    align-items: center;
    justify-content: center;
-   margin-bottom: 10px;
-   font-size: 18px;
+   margin-bottom: 0.71428em;
+   font-size: 1.2857em;
    div {
       width: 20px;
       height: 20px;
@@ -115,6 +114,11 @@ a[href].social {
          background-image: url("../assets/github-2.png");
       }
       color: black;
+   }
+}
+@media (max-height: 650px) {
+   .sidebar {
+      font-size: 12px;
    }
 }
 </style>

@@ -6,7 +6,7 @@
          <div class="page-row">
             <div class="row-content">
                <div v-for="(skill,i) in skillset" :key="i" class="skillset">
-                  <h3 class="skill-header highlight">{{ skill.title }}</h3>
+                  <h3 class="skill-header">{{ skill.title }}</h3>
                   <div class="skills">
                      <skill-card 
                         v-for="(subskill, n) in skill.skills" 

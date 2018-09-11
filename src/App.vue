@@ -1,13 +1,47 @@
 <template>
    <div id="app">
-      <div class="sidebar">
+      <div class="sidebar" id="sidebar">
          <sidebar />
       </div>
+
       <div class="main-content">
+         <button :class="[
+               'btn', 
+               'btn-primary', 
+               'menu-toggle', 
+               $route.name === 'home' ? 'home' : ''
+            ]" 
+            @click="toggleMenu"
+            >
+               <img 
+                  v-if="$route.name !== 'home'"  
+                  src="https://mdbootstrap.com/img/svg/hamburger7.svg?color=FFFFFF" 
+                  alt="menu">
+               <img v-else
+                  src="https://mdbootstrap.com/img/svg/hamburger7.svg?color=5c2600" 
+                  alt="menu">
+         </button>
          <router-view/>
       </div>
    </div>
 </template>
+
+<script>
+export default {
+   methods: {
+      toggleMenu() {
+         document.querySelector("#sidebar").classList.toggle("sidebar-show");
+         console.log(document.querySelector("#sidebar"));
+      }
+   },
+   watch: {
+      $route() {
+         this.toggleMenu();
+      }
+   }
+};
+</script>
+
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Roboto|Ubuntu|Nunito");
@@ -20,19 +54,26 @@
 $main: #5c2600;
 $offset: 270px;
 
-.sidebar {
+#sidebar {
    position: fixed;
-   width: $offset;
+   min-width: $offset;
+   background-color: #fafffd;
+   overflow: hidden;
 }
 
 .main-content {
    margin-left: $offset;
-   margin-bottom: 100px;
+   margin-bottom: 7.143em;
 }
 
 @media (max-width: 900px) {
-   .sidebar {
+   #sidebar {
+      transition: all 0.5s;
       left: -$offset;
+
+      &.sidebar-show {
+         left: 0;
+      }
    }
    .main-content {
       margin-left: 0;
@@ -81,6 +122,38 @@ a.highlight[href] {
    border-color: #ccc;
    &:hover {
       background-color: #eee;
+   }
+}
+
+$primary: #502302;
+.menu-toggle {
+   position: absolute;
+   right: 20px;
+   top: 20px;
+
+   background-color: $primary;
+   border-color: $primary;
+   &.home {
+      background: none;
+      border: 1px solid transparent;
+      &:focus {
+         background: none;
+         border: 1px solid transparent;
+      }
+      &:active:hover {
+         border-color: $primary;
+      }
+   }
+
+   &:hover,
+   &:active:hover {
+      border-color: $primary;
+   }
+}
+
+@media (min-width: 900px) {
+   .menu-toggle {
+      display: none;
    }
 }
 </style>
