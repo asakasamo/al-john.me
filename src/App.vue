@@ -59,6 +59,7 @@ $offset: 270px;
    position: fixed;
    min-width: $offset;
    background-color: #fafffd;
+   z-index: 999;
 }
 
 .main-content {
