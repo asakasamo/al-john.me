@@ -73,7 +73,7 @@ $sig: #542300;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 90vh;
+      min-height: 95vh;
    }
 }
 

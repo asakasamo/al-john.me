@@ -119,6 +119,7 @@ a[href].social {
 @media (max-height: 700px) {
    .sidebar {
       font-size: 12px;
+      padding-top: 3.3em;
    }
 }
 </style>
