@@ -129,7 +129,9 @@
                </ul>
             </div>
             <div class="space"></div>
-            <div class="flex-btns"><a class="btn btn-primary" href="/">Visit</a></div>
+            <div class="flex-btns">
+               <a class="btn btn-secondary" href="https://github.com/asakasamo/al-john.me.github.io">Source</a>
+            </div>
          </div>
       </div>
    </div>

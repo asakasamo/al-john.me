@@ -67,13 +67,13 @@ $sig: #542300;
    #home {
       margin-top: 0;
       padding: 10px;
-      font-size: 10.5px;
+      font-size: 10.4px;
 
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      min-height: 90vh;
    }
 }
 

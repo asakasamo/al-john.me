@@ -128,7 +128,7 @@ export default {
       border-bottom: 2px solid transparent;
    }
    &.space {
-      font-size: 0.3em;
+      font-size: 0.5em;
    }
 }
 
@@ -153,7 +153,10 @@ export default {
       text-align: center;
    }
    .skills {
-      justify-content: space-around;
+      justify-content: space-between;
+   }
+   .dash {
+      display: none;
    }
 }
 
