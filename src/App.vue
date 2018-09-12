@@ -30,7 +30,7 @@
                alt="menu">
       </button>
 
-      <div class="main-content">
+      <div class="main-content" @click="closeMenu">
          <router-view/>
       </div>
    </div>
@@ -47,6 +47,10 @@ export default {
       toggleMenu() {
          document.querySelector("#sidebar").classList.toggle("sidebar-show");
          this.menuIsShowing = !this.menuIsShowing;
+      },
+      closeMenu() {
+         document.querySelector("#sidebar").classList.remove("sidebar-show");
+         this.menuIsShowing = false;
       }
    },
    watch: {
@@ -162,7 +166,8 @@ a.highlight[href] {
 }
 
 $primary: #502302;
-.menu-toggle {
+.menu-toggle,
+.menu-toggle:hover {
    /* position relative to top header */
    position: absolute;
    left: 5px;
@@ -173,19 +178,18 @@ $primary: #502302;
 
    // menu toggle fade-in
    transition: opacity 1.3s;
+   background: none;
+   border: 1px solid transparent;
 
-   &.home {
+   &:focus {
       background: none;
       border: 1px solid transparent;
-      &:focus {
-         background: none;
-         border: 1px solid transparent;
-         outline: 1px solid transparent;
-      }
-      &:active:hover {
-         background: none;
-         border-color: #ddd;
-      }
+      outline: none;
+   }
+
+   &:active:hover {
+      background: none;
+      border-color: #ddd;
    }
 
    /* position relative to sidebar */

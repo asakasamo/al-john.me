@@ -54,8 +54,7 @@ $space: 1.429em;
    z-index: 900;
 
    position: absolute;
-
-   right: 0;
+   left: -1px;
 }
 .active-page {
    font-weight: bold;
