@@ -116,7 +116,7 @@ a[href].social {
       color: black;
    }
 }
-@media (max-width: 900px) {
+@media screen and (max-width: 900px), (max-height: 700px) {
    .sidebar {
       padding-top: 3.3em;
       font-size: 12px;

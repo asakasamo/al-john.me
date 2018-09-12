@@ -24,4 +24,10 @@ $primary: #502302;
    align-items: center;
    justify-content: space-between;
 }
+
+@media screen and (max-width: 900px) {
+   #page-header {
+      padding-left: 80px;
+   }
+}
 </style>
