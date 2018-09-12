@@ -1,7 +1,9 @@
 <template>
    <div id="app">
-      <div class="sidebar" id="sidebar">
+      <div id="sidebar">
          <sidebar />
+         
+         <!-- side menu toggle -->
          <button class="btn btn-primary menu-toggle-2" @click="toggleMenu">
             <div class="left-half"></div>
             <div class="right-half">
@@ -10,6 +12,7 @@
          </button>
       </div>
       
+      <!-- top menu toggle -->
       <button :class="[
             'btn', 
             'btn-primary', 
@@ -23,7 +26,7 @@
                src="https://mdbootstrap.com/img/svg/hamburger7.svg?color=FFFFFF" 
                alt="menu">
             <img v-else
-               src="https://mdbootstrap.com/img/svg/hamburger7.svg?color=5c2600" 
+               src="https://mdbootstrap.com/img/svg/hamburger7.svg?color=592500" 
                alt="menu">
       </button>
 
@@ -35,9 +38,15 @@
 
 <script>
 export default {
+   data() {
+      return {
+         menuIsShowing: false
+      };
+   },
    methods: {
       toggleMenu() {
          document.querySelector("#sidebar").classList.toggle("sidebar-show");
+         this.menuIsShowing = !this.menuIsShowing;
       }
    },
    watch: {
@@ -67,13 +76,10 @@ $toggle-width: 60px;
 #sidebar {
    position: fixed;
    min-width: $sidebar-width;
-   background-color: $background;
-   z-index: 999;
 }
 
 .main-content {
    margin-left: $sidebar-width;
-   // margin-bottom: 7.143em;
 }
 
 @media (max-width: 900px) {
@@ -86,10 +92,14 @@ $toggle-width: 60px;
 
          // menu toggle animation
          .menu-toggle-2 img {
-            opacity: 1;
+            // transform: rotateZ(0deg);
+            // transform: rotateY(180deg);
+            margin-left: -9px;
          }
 
          + .menu-toggle {
+            // menu-toggle fade-out animation
+            transition: opacity 0.5s;
             opacity: 0;
          }
       }
@@ -131,8 +141,15 @@ a.highlight[href] {
    &:focus,
    &:active:hover {
       border-color: $main;
-      background-color: $main;
    }
+
+   // &[disabled]:hover {
+   //    background-color: inherit;
+   //    border-color: transparent;
+   // }
+   // &[disabled]:focus {
+   //    box-shadow: inherit;
+   // }
 }
 
 .btn-secondary {
@@ -146,20 +163,16 @@ a.highlight[href] {
 
 $primary: #502302;
 .menu-toggle {
-   /* position relative to sidebar */
-   /*
-   position: absolute;
-   top: 20px;
-   right: -70px;
-   */
-
    /* position relative to top header */
    position: absolute;
-   left: 10px;
-   top: 20px;
+   left: 5px;
+   top: 13px;
    background-color: $primary;
    border-color: $primary;
-   transition: all 0.1s;
+   z-index: 999;
+
+   // menu toggle fade-in
+   transition: opacity 1.3s;
 
    &.home {
       background: none;
@@ -167,63 +180,67 @@ $primary: #502302;
       &:focus {
          background: none;
          border: 1px solid transparent;
+         outline: 1px solid transparent;
       }
       &:active:hover {
-         border-color: $primary;
+         background: none;
+         border-color: #ddd;
       }
    }
 
-   &:hover,
-   &:active:hover {
-      border-color: $primary;
-   }
+   /* position relative to sidebar */
+   /*
+   position: absolute;
+   top: 20px;
+   right: -70px;
+   */
 }
 
 .menu-toggle-2 {
+   $toggle-height: $toggle-width;
+
    width: $toggle-width;
-   height: $toggle-width;
-   z-index: -100;
-   background: none;
-   border: none;
+   height: $toggle-height;
+
+   z-index: 800;
    padding: 0;
    transition: all 0.5s;
+   background-color: $background;
+
+   &:hover,
+   &:focus,
+   &:active:hover {
+      border: 1px solid #ddd;
+      background: none;
+      box-shadow: none;
+      outline: none;
+   }
+
+   border: 1px solid #ddd;
+   border-radius: 50%;
 
    position: absolute;
-   right: -$toggle-width / 2;
-   top: 50%;
-   margin: -$toggle-width/2 0 0 0;
+   right: -$toggle-width / 2 + 2px;
+   margin: -$toggle-height/2 0 0 0;
+   top: 50vh;
 
-   border-radius: 50%;
    overflow: hidden;
    display: flex;
    > * {
       flex: 1;
    }
+
    .right-half {
-      background-color: $main;
-      height: $toggle-width;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      margin-left: 10px;
+
       img {
-         width: 50%;
-         height: 50%;
-         color: white;
-         opacity: 0;
-         margin-left: -10px;
+         width: 60%;
+         height: 60%;
 
          transition: all ease-in 0.5s;
       }
-   }
-   &:hover,
-   &:focus,
-   &:active:hover {
-      border: none;
-      background: none;
-      box-shadow: none;
-      outline: none;
    }
 }
 
@@ -233,12 +250,7 @@ $primary: #502302;
       opacity: 0;
       right: 0;
       width: 0;
+      display: none;
    }
-}
-
-.menu-toggle {
-}
-
-.menu-toggle-2 {
 }
 </style>

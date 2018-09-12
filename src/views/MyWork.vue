@@ -163,23 +163,26 @@
 .card-img-top {
    width: 100%;
    height: 215px;
+   border: 1px solid #ddd;
+   border-bottom: none;
 }
 
 .flex-btns {
    display: flex;
    justify-content: center;
    margin-bottom: 10px;
+   margin-top: 5px;
 }
 
 .card {
-   border: 1px solid #ddd;
    display: flex;
    flex-direction: column;
 }
 
 .card-body {
    padding: 10px;
-   border-top: 1px solid #ddd;
+   border: 1px solid #ddd;
+   border-bottom: none;
 }
 
 .card-title {
@@ -189,6 +192,8 @@
 
 .space {
    flex: 1;
+   border: 1px solid #ddd;
+   border-top: none;
 }
 </style>
 

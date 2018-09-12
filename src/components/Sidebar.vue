@@ -44,11 +44,18 @@ export default {
 $space: 1.429em;
 
 .sidebar {
+   background-color: #fafffd;
    text-align: center;
    border-right: 1px solid #ddd;
    min-height: 100vh;
+   min-width: 270px;
    // padding-top: 39px;
    padding-top: 3.786em;
+   z-index: 900;
+
+   position: absolute;
+
+   right: 0;
 }
 .active-page {
    font-weight: bold;
