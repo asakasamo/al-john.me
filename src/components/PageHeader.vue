@@ -27,7 +27,7 @@ $primary: #502302;
 
 @media screen and (max-width: 900px) {
    #page-header {
-      padding-left: 80px;
+      padding-left: 74px;
    }
 }
 </style>

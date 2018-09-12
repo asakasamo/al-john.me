@@ -15,8 +15,8 @@
          </h2>
 
          <h3>Check out my 
-            <a href="/about">skillset</a> and
-            <a href="/my-work">projects</a>! 
+            <router-link to="about">skillset</router-link> and 
+            <router-link to="my-work">projects</router-link>!
             <br>Or, just navigate the site using the 
             <span class="small-screen">popout menu</span>
             <span class="large-screen">sidebar</span>.

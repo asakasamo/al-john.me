@@ -14,12 +14,12 @@
       
       <!-- top menu toggle -->
       <button :class="[
-            'btn', 
-            'btn-primary', 
+            'btn',
             'menu-toggle', 
             $route.name === 'home' ? 'home' : ''
          ]" 
          @click="toggleMenu"
+         :disabled="menuIsShowing"
          >
             <img 
                v-if="$route.name !== 'home'"  
@@ -88,13 +88,15 @@ $toggle-width: 60px;
 
 @media (max-width: 900px) {
    #sidebar {
-      transition: all 0.5s;
+      // sidebar slide-out animation
+      transition: 0.8s cubic-bezier(0.7, 0, 1, 1);
       left: -$sidebar-width - $toggle-width;
 
       &.sidebar-show {
+         transition: 0.5s;
          left: 0;
 
-         // menu toggle animation
+         // menu toggle arrow animation
          .menu-toggle-2 img {
             // transform: rotateZ(0deg);
             // transform: rotateY(180deg);
@@ -173,11 +175,20 @@ $primary: #502302;
 .menu-toggle:active:hover {
    /* position relative to top header */
    position: absolute;
-   left: 5px;
-   top: 13px;
    background-color: $primary;
    border-color: $primary;
    z-index: 999;
+
+   left: 10px;
+   $header-height: 84px;
+   $toggle-height: 46px;
+
+   top: ($header-height / 2) - ($toggle-height / 2);
+
+   &.home {
+      left: 5px;
+      top: 13px;
+   }
 
    // menu toggle fade-in
    transition: opacity 1.3s;
