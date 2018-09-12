@@ -37,16 +37,19 @@ $sig: #542300;
    margin-top: 12em;
 }
 
+h3 {
+   font-size: 1.7143em;
+}
+
 .grabber {
    font-size: 3.15em;
    line-height: 1.3;
    margin-bottom: 40px;
-}
-
-.grabber .highlight {
-   font-size: 1.18em;
-   padding: 5px;
-   color: $main;
+   .highlight {
+      font-size: 1.18em;
+      padding: 5px;
+      color: $main;
+   }
 }
 
 .intro-caption {
@@ -54,13 +57,19 @@ $sig: #542300;
    margin-bottom: 40px;
 }
 
-@media (min-width: 900px) {
+.highlight.sig {
+   color: $sig;
+   font-weight: 900;
+   font-size: 1.65em;
+}
+
+@media screen and (min-width: 900px) {
    .small-screen {
       display: none;
    }
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
    .large-screen {
       display: none;
    }
@@ -79,15 +88,5 @@ $sig: #542300;
 
 .emph {
    color: $emph;
-}
-
-.highlight.sig {
-   color: $sig;
-   font-weight: 900;
-   font-size: 1.65em;
-}
-
-h3 {
-   font-size: 1.65em;
 }
 </style>
