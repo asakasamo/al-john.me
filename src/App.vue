@@ -167,7 +167,10 @@ a.highlight[href] {
 
 $primary: #502302;
 .menu-toggle,
-.menu-toggle:hover {
+.menu-toggle:focus,
+.menu-toggle:hover,
+.menu-toggle:active,
+.menu-toggle:active:hover {
    /* position relative to top header */
    position: absolute;
    left: 5px;
@@ -178,19 +181,10 @@ $primary: #502302;
 
    // menu toggle fade-in
    transition: opacity 1.3s;
+
    background: none;
    border: 1px solid transparent;
-
-   &:focus {
-      background: none;
-      border: 1px solid transparent;
-      outline: none;
-   }
-
-   &:active:hover {
-      background: none;
-      border-color: #ddd;
-   }
+   outline: none;
 
    /* position relative to sidebar */
    /*
@@ -200,7 +194,11 @@ $primary: #502302;
    */
 }
 
-.menu-toggle-2 {
+.menu-toggle-2,
+.menu-toggle-2:hover,
+.menu-toggle-2:focus,
+.menu-toggle-2:active,
+.menu-toggle-2:active:hover {
    $toggle-height: $toggle-width;
 
    width: $toggle-width;
@@ -211,14 +209,8 @@ $primary: #502302;
    transition: all 0.5s;
    background-color: $background;
 
-   &:hover,
-   &:focus,
-   &:active:hover {
-      border: 1px solid #ddd;
-      background: none;
-      box-shadow: none;
-      outline: none;
-   }
+   box-shadow: none;
+   outline: none;
 
    border: 1px solid #ddd;
    border-radius: 50%;
