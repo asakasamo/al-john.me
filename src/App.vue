@@ -148,14 +148,6 @@ a.highlight[href] {
    &:active:hover {
       border-color: $main;
    }
-
-   // &[disabled]:hover {
-   //    background-color: inherit;
-   //    border-color: transparent;
-   // }
-   // &[disabled]:focus {
-   //    box-shadow: inherit;
-   // }
 }
 
 .btn-secondary {
@@ -173,12 +165,15 @@ $primary: #502302;
 .menu-toggle:hover,
 .menu-toggle:active,
 .menu-toggle:active:hover {
-   /* position relative to top header */
-   position: absolute;
-   background-color: $primary;
-   border-color: $primary;
+   background-color: transparent;
+   border-color: transparent;
+   border: 1px solid transparent;
+   outline: none;
+
    z-index: 999;
 
+   /* position relative to top header */
+   position: absolute;
    left: 10px;
    $header-height: 84px;
    $toggle-height: 46px;
@@ -192,10 +187,6 @@ $primary: #502302;
 
    // menu toggle fade-in
    transition: opacity 1.3s;
-
-   background: none;
-   border: 1px solid transparent;
-   outline: none;
 
    /* position relative to sidebar */
    /*
