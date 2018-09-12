@@ -7,7 +7,7 @@
       "serve": "vue-cli-service serve",
       "build": "vue-cli-service build && echo | set /p txt=\"al-john.me\" > ./dist/CNAME",
       "lint": "vue-cli-service lint",
-      "deploy": "node ./node_modules/vue-gh-pages/index.js -p -m 'Deploy to gh-pages'"
+      "deploy": "node ./node_modules/vue-gh-pages/index.js -p -m Deploy to gh-pages"
    },
    "dependencies": {
       "push-dir": "^0.4.1",

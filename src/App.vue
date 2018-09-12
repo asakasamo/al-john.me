@@ -7,7 +7,8 @@
          <button class="btn btn-primary menu-toggle-2" @click="toggleMenu">
             <div class="left-half"></div>
             <div class="right-half">
-               <img src="@/assets/left-toggle.svg" alt="left toggle">
+               <img src="@/assets/left-toggle.svg" alt="menu toggle">
+               <img src="@/assets/left-toggle.svg" alt="menu toggle" class="mirror">
             </div>
          </button>
       </div>
@@ -89,25 +90,29 @@ $toggle-width: 60px;
 @media (max-width: 900px) {
    #sidebar {
       // sidebar slide-out animation
-      transition: 0.8s cubic-bezier(0.7, 0, 1, 1);
+      transition: 0.8s cubic-bezier(0.68, 0, 0.85, 0.5);
       left: -$sidebar-width - $toggle-width;
 
       &.sidebar-show {
          transition: 0.5s;
-         left: 0;
-
-         // menu toggle arrow animation
-         .menu-toggle-2 img {
-            // transform: rotateZ(0deg);
-            // transform: rotateY(180deg);
-            margin-left: -9px;
-         }
+         transform: translateX($sidebar-width + $toggle-width);
 
          + .menu-toggle {
-            // menu-toggle fade-out animation
-            transition: opacity 0.5s;
+            // top menu-toggle fade-out animation
+            transition: opacity 0.8s;
             opacity: 0;
          }
+
+         .menu-toggle-2 {
+            img {
+               opacity: 1;
+               &.mirror {
+                  opacity: 0;
+               }
+            }
+         }
+
+         // menu toggle arrow animation
       }
    }
    .main-content {
@@ -163,8 +168,7 @@ $primary: #502302;
 .menu-toggle,
 .menu-toggle:focus,
 .menu-toggle:hover,
-.menu-toggle:active,
-.menu-toggle:active:hover {
+.menu-toggle:active:focus {
    background-color: transparent;
    border-color: transparent;
    border: 1px solid transparent;
@@ -185,8 +189,12 @@ $primary: #502302;
       top: 13px;
    }
 
+   &:active {
+      border-color: #ddd;
+   }
+
    // menu toggle fade-in
-   transition: opacity 1.3s;
+   transition: 0.8s opacity cubic-bezier(0.68, 0, 0.85, 0.5);
 
    /* position relative to sidebar */
    /*
@@ -234,12 +242,24 @@ $primary: #502302;
       margin-left: 10px;
 
       img {
-         width: 60%;
-         height: 60%;
+         width: 14.4px;
+         height: 18.625px;
+         transition: all 3s;
 
-         transition: all ease-in 0.5s;
+         position: absolute;
+         top: ($toggle-height / 2) - (18.625px/2);
+         left: 60%;
+
+         opacity: 0;
+         &.mirror {
+            opacity: 1;
+         }
       }
    }
+}
+
+.mirror {
+   transform: rotateY(180deg);
 }
 
 @media (min-width: 900px) {
