@@ -1,12 +1,12 @@
 <template>
-   <header id="page-header">
+   <header id="page-header" :style="{ paddingLeft: leftPadding }">
       <span>{{ text }}</span>
    </header>
 </template>
 
 <script>
 export default {
-   props: ["text"]
+   props: ["text", "leftPadding"]
 };
 </script>
 
@@ -27,7 +27,7 @@ $primary: #502302;
 
 @media screen and (max-width: 900px) {
    #page-header {
-      padding-left: 74px;
+      padding-left: 74px !important;
    }
 }
 </style>
