@@ -101,18 +101,15 @@ export default {
 .page-table {
    display: flex;
    flex-direction: column;
-   padding: 30px 20px 5px 20px;
-   font-size: 12px;
+   padding: 28px 20px 5px 18px;
+   font-size: 13.35px;
 }
 
 .page-row {
    display: flex;
    flex-direction: row;
    align-items: center;
-
-   .row-content {
-      padding: 0px 20px;
-   }
+   padding: 0px 20px;
 }
 
 .skills {
@@ -144,7 +141,7 @@ export default {
 }
 
 .skillset {
-   margin-bottom: 30px;
+   margin-bottom: 29.5px;
    display: flex;
    flex-direction: column;
    justify-content: space-around;

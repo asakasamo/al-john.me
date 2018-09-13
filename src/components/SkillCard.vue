@@ -18,7 +18,7 @@ export default {
    display: flex;
    flex-direction: column;
    align-items: center;
-   margin: 0.7143em 1.43em 0 0;
+   margin: 0.7143em 1.515em 0 0;
 
    img {
       width: 7.143em;
