@@ -244,7 +244,7 @@ $primary: #502302;
       img {
          width: 14.4px;
          height: 18.625px;
-         transition: all 3s;
+         transition: all ease-in 1s;
 
          position: absolute;
          top: ($toggle-height / 2) - (18.625px/2);
