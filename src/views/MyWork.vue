@@ -65,8 +65,8 @@ export default {
          selectedIdx: 0,
          projects: [
             {
-               image: require("@/assets/projects/wemeetup.png"),
-               title: "WeMeetup",
+               image: require("@/assets/projects/devmeetup.png"),
+               title: "DevMeetup",
                desc: `<p class="card-text">A Meetup clone that lets users organize, register for, and browse meetups</p>
                   <ul>
                      <li><strong>Vue</strong>-based web application written in <strong>ES6</strong></li>
@@ -76,7 +76,7 @@ export default {
                         <strong>4</strong></li>
                   </ul>`,
                demoLink: "",
-               srcLink: "https://github.com/asakasamo/WeMeetup"
+               srcLink: "https://github.com/asakasamo/DevMeetup"
             },
             {
                image: require("@/assets/projects/catchoftheday.png"),
