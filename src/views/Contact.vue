@@ -56,7 +56,7 @@
 }
 
 .contact-msg {
-   font-size: 1.65em;
+   font-size: 1.635em;
    text-align: left;
    margin-bottom: 0.8em;
 }
