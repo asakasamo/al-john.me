@@ -1,12 +1,16 @@
 <template>
-   <div class="about">
+   <div id="about">
       <page-header text="About Me" />
       
       <div class="page-table">
          <div class="page-row">
             <div class="row-content">
-               <div v-for="(skill,i) in skillset" :key="i" class="skillset">
-                  <div style="display: flex; flex-direction: row; align-items: center">
+               <div 
+                  v-for="(skill,i) in skillset" 
+                  :key="i" 
+                  class="skillset"
+                  >
+                  <div class="skill-header-wrap">
                      <h3 class="skill-header">
                         {{ skill.title }}
                      </h3>
@@ -98,6 +102,7 @@ export default {
    display: flex;
    flex-direction: column;
    padding: 30px 20px 5px 20px;
+   font-size: 12px;
 }
 
 .page-row {
@@ -113,6 +118,12 @@ export default {
 .skills {
    display: flex;
    flex-wrap: wrap;
+}
+
+.skill-header-wrap {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
 }
 
 .skill-header {
@@ -158,11 +169,5 @@ export default {
    .dash {
       display: none;
    }
-}
-
-.picture {
-   width: 40rem;
-   height: 40rem;
-   background-color: yellow;
 }
 </style>

@@ -18,14 +18,14 @@ export default {
    display: flex;
    flex-direction: column;
    align-items: center;
-   margin: 10px 20px 0 0;
+   margin: 0.7143em 1.43em 0 0;
 
    img {
-      width: 100px;
-      height: 100px;
+      width: 7.143em;
+      height: 7.143em;
    }
    p {
-      font-size: 18px;
+      font-size: 1.2857em;
       font-weight: bold;
    }
 }

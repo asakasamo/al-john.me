@@ -7,7 +7,7 @@
             v-for="(project, idx) in projects" 
             :key="idx"
             :class="['card', idx === selectedIdx ? 'selected' : '']"
-            :id="`card-${idx}`"
+            :id="`project-${idx}`"
             @mouseover="selectCard(idx)"
             >
             <a :href="project.demoLink || '#'" class="card-content">
