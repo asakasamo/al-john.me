@@ -159,11 +159,15 @@ export default {
    },
    mounted() {
       window.addEventListener("keyup", (e) => {
-         if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+         if (e.key === "ArrowLeft") {
             this.selectedIdx--;
          }
-         if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+         if (e.key === "ArrowRight") {
             this.selectedIdx++;
+         }
+         if (e.key === "Enter") {
+            let win = window.open(this.projects[this.selectedIdx].srcLink);
+            win.focus();
          }
       });
    },
@@ -177,9 +181,8 @@ export default {
 };
 </script>
 
-
 <style lang="scss" scoped>
-$card-bg: #e3f2fd;
+$card-bg: #f5fafd;
 
 @media (min-width: 900px) {
    #my-work {
@@ -187,7 +190,7 @@ $card-bg: #e3f2fd;
    }
    .card {
       // fade-out
-      opacity: 0.75;
+      opacity: 0.66;
       transition: 0.03s ease-out;
    }
    .card.selected {
@@ -218,7 +221,7 @@ $card-bg: #e3f2fd;
 .card-img-top {
    width: 100%;
    height: 215px;
-   border: 1px solid #ddd;
+   // border: 1px solid #ddd;
    border-bottom: none;
 }
 
@@ -239,7 +242,7 @@ $card-bg: #e3f2fd;
 
 .card-body {
    padding: 10px;
-   border: 1px solid #ddd;
+   // border: 1px solid #ddd;
    border-bottom: none;
    background-color: $card-bg;
    height: 301px;
@@ -252,9 +255,13 @@ $card-bg: #e3f2fd;
 
 .space {
    flex: 1;
-   border: 1px solid #ddd;
+   // border: 1px solid #ddd;
    border-top: none;
    background-color: $card-bg;
+}
+
+.card-content {
+   border: 1px solid #ddd;
 }
 </style>
 
