@@ -6,7 +6,9 @@
          <div 
             v-for="(project, idx) in projects" 
             :key="idx"
-            class="card"
+            :class="['card', idx === selectedIdx ? 'selected' : '']"
+            :id="`card-${idx}`"
+            @mouseover="selectCard(idx)"
             >
             <a :href="project.demoLink || '#'" class="card-content">
                <img 
@@ -15,11 +17,19 @@
                   :src="project.image" 
                   :alt="project.name" />
 
-               <div 
-                  v-if="project.imageHTML"
-                  v-html="project.imageHTML"
+               <div
+                  v-if="project.video" 
+                  class="card-img-top"
+                  style="background-color: black"
                   >
-                  </div>
+                  <video 
+                     height="100%"
+                     width="100%"
+                     autoplay
+                     >
+                     <source :src="project.video" type="video/mp4">
+                  </video>
+               </div>
 
                <div class="card-body bg-light p-3">
                   <h4 class="card-title">
@@ -37,7 +47,7 @@
                </a>
                <a 
                   class="btn btn-secondary" 
-                  :href="srcLink">
+                  :href="project.srcLink">
                      Source
                </a>
             </div>
@@ -52,12 +62,12 @@
 export default {
    data() {
       return {
+         selectedIdx: 0,
          projects: [
             {
                image: require("@/assets/projects/wemeetup.png"),
                title: "WeMeetup",
                desc: `<p class="card-text">A Meetup clone that lets users organize, register for, and browse meetups</p>
-
                   <ul>
                      <li><strong>Vue</strong>-based web application written in <strong>ES6</strong></li>
                      <li><strong>Firebase</strong> used for database &amp; user authentication</li>
@@ -72,7 +82,6 @@ export default {
                image: require("@/assets/projects/catchoftheday.png"),
                title: "Catch of the Day",
                desc: `<p class="card-text">A web store simulator, providing inventory management for authorized users</p>
-
                <ul>
                   <li><strong>React</strong>-based web application written in <strong>ES6/JSX</strong></li>
                   <li><strong>Firebase</strong> used for database &amp; user authentication</li>
@@ -88,7 +97,6 @@ export default {
                title: "Prisoner's Game of Life",
                desc: `<p class="card-text">A 0-player game applying game theory (The Prisoner's Dilemma) to cellular automata (The
                   Game of Life)</p>
-
                <ul>
                   <li><strong>Vue</strong>-based game/web application written in <strong>ES6</strong></li>
                   <li>Material design using <strong>Vue-bootstrap</strong></li>
@@ -99,33 +107,24 @@ export default {
                srcLink: "https://github.com/asakasamo/prisoners-game-of-life"
             },
             {
-               imageHTML: `<div class="card-img-top" style="position: relative; padding-bottom: 54%;">
-               <iframe style="position: absolute; top: 0; left: 0; z-index: 0;"
-                  src="https://gfycat.com/ifr/AmusingDefenselessCoypu" 
-                  width="100%" height="100%" frameborder="0" scrolling="no"
-                  allowfullscreen="allowfullscreen">
-               </iframe>
-            </div>`,
+               video: require("@/assets/planAmity-demo.mp4"),
                title: "planAmity",
-               desc: `<div class="card-body bg-light p-3">
-               <h4 class="card-title">planAmity</h4>
+               desc: `
                <p class="card-text">A project planning &amp; management application</p>
-
                <ul>
                   <li><strong>Java</strong>-based desktop application built using <strong>JavaFX</strong></li>
                   <li><strong>Model-View-Controller</strong> (<strong>MVC</strong>) design pattern</li>
                   <li><strong>Unit testing/TDD</strong> using <strong>Groovy</strong></li>
                   <li>Detailed Javadoc documentation!</li>
                </ul>
-            </div>`,
-               demoLink: "https://gfycat.com/ifr/AmusingDefenselessCoypu",
+               `,
+               demoLink: require("@/assets/planAmity-demo.mp4"),
                srcLink: "https://github.com/asakasamo/PlanAmity"
             },
             {
                image: require("@/assets/projects/codewars.png"),
                title: "CodeWars",
                desc: `<p class="card-text">Completing programming challenges to achieve code mastery through challenge!</p>
-
                <ul>
                   <li><strong>Overall Ranking:</strong> 5 kyu</li>
                   <li><strong>Languages Trained:</strong> Javascript, Java</li>
@@ -139,7 +138,6 @@ export default {
                image: require("@/assets/projects/recursion.png"),
                title: "Al-John.me",
                desc: `<p class="card-text">The website you're currently viewing</p>
-
                <ul>
                   <li><strong>Custom Website</strong> built in <strong>Vue</strong></li>
                   <li>
@@ -154,7 +152,28 @@ export default {
          ]
       };
    },
-   methods: {}
+   methods: {
+      selectCard(idx) {
+         this.selectedIdx = idx;
+      }
+   },
+   mounted() {
+      window.addEventListener("keyup", (e) => {
+         if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+            this.selectedIdx--;
+         }
+         if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+            this.selectedIdx++;
+         }
+      });
+   },
+   watch: {
+      selectedIdx() {
+         if (this.selectedIdx < 0) this.selectedIdx = 0;
+         if (this.selectedIdx > this.projects.length - 1)
+            this.selectedIdx = this.projects.length - 1;
+      }
+   }
 };
 </script>
 
@@ -168,10 +187,10 @@ $card-bg: #e3f2fd;
    }
    .card {
       // fade-out
-      transition: 0.03s ease-out;
       opacity: 0.75;
+      transition: 0.03s ease-out;
    }
-   .card:hover {
+   .card.selected {
       opacity: 1;
       // fade-in
       transition: 0.045s;
@@ -223,6 +242,7 @@ $card-bg: #e3f2fd;
    border: 1px solid #ddd;
    border-bottom: none;
    background-color: $card-bg;
+   height: 301px;
 }
 
 .card-title {
