@@ -16,7 +16,7 @@ $primary: #502302;
 #page-header {
    color: #fafffd;
    background-color: $primary;
-   padding: 12px 40px;
+   padding: 13.5px 40px;
    font-size: 3em;
    font-weight: bold;
 
