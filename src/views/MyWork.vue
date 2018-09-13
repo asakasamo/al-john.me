@@ -1,36 +1,77 @@
 <template>
    <div id="my-work">
-      <page-header text="My Work" />
+      <page-header text="My Work" left-padding="23px"/>
 
       <div class="flex-cards">
+         <div 
+            v-for="(project, idx) in projects" 
+            :key="idx"
+            class="card"
+            >
+            <a :href="project.demoLink || '#'" class="card-content">
+               <img 
+                  v-if="project.image"
+                  class="card-img-top" 
+                  :src="project.image" 
+                  :alt="project.name" />
 
-         <div class="card">
-            <img class="card-img-top" src="@/assets/projects/wemeetup.png" alt="WeMeetup" />
-            <div class="card-body bg-light p-3">
-               <h4 class="card-title">WeMeetup</h4>
-               <p class="card-text">A Meetup clone that lets users organize, register for, and browse meetups</p>
+               <div 
+                  v-if="project.imageHTML"
+                  v-html="project.imageHTML"
+                  >
+                  </div>
 
-               <ul>
-                  <li><strong>Vue</strong>-based web application written in <strong>ES6</strong></li>
-                  <li><strong>Firebase</strong> used for database &amp; user authentication</li>
-                  <li><strong>Vuex</strong> store used for state management</li>
-                  <li><strong>Responsive</strong> web design using <strong>Vuetify</strong> and <strong>Bootstrap</strong>
-                     <strong>4</strong></li>
-               </ul>
-            </div>
+               <div class="card-body bg-light p-3">
+                  <h4 class="card-title">
+                     {{ project.title }}
+                  </h4>
+                  <div v-html="project.desc"></div>
+               </div>
+            </a>
             <div class="space"></div>
             <div class="flex-btns">
-               <a class="btn btn-primary" href="https://wemeetup.localhost/al-john.me">Demo</a>
-               <a class="btn btn-secondary" href="https://github.com/asakasamo/WeMeetup">Source</a>
+               <a 
+                  class="btn btn-primary" 
+                  :href="project.demoLink">
+                  {{ project.demoText || 'Demo' }}
+               </a>
+               <a 
+                  class="btn btn-secondary" 
+                  :href="srcLink">
+                     Source
+               </a>
             </div>
 
          </div>
+      </div>
 
-         <div class="card">
-            <img class="card-img-top" src="@/assets/projects/catchoftheday.png" alt="Catch of the Day" />
-            <div class="card-body bg-light p-3">
-               <h4 class="card-title">Catch of the Day</h4>
-               <p class="card-text">A web store simulator, providing inventory management for authorized users</p>
+   </div>
+</template>
+
+<script>
+export default {
+   data() {
+      return {
+         projects: [
+            {
+               image: require("@/assets/projects/wemeetup.png"),
+               title: "WeMeetup",
+               desc: `<p class="card-text">A Meetup clone that lets users organize, register for, and browse meetups</p>
+
+                  <ul>
+                     <li><strong>Vue</strong>-based web application written in <strong>ES6</strong></li>
+                     <li><strong>Firebase</strong> used for database &amp; user authentication</li>
+                     <li><strong>Vuex</strong> store used for state management</li>
+                     <li><strong>Responsive</strong> web design using <strong>Vuetify</strong> and <strong>Bootstrap</strong>
+                        <strong>4</strong></li>
+                  </ul>`,
+               demoLink: "",
+               srcLink: "https://github.com/asakasamo/WeMeetup"
+            },
+            {
+               image: require("@/assets/projects/catchoftheday.png"),
+               title: "Catch of the Day",
+               desc: `<p class="card-text">A web store simulator, providing inventory management for authorized users</p>
 
                <ul>
                   <li><strong>React</strong>-based web application written in <strong>ES6/JSX</strong></li>
@@ -38,20 +79,14 @@
                   <li><strong>Re-base</strong> used for realtime database synchronization</li>
                   <li>Animations using <strong>CSS3</strong> and <strong>React-transition-group</strong></li>
                   <li>Local data storage using <strong>HTML5 Web Storage</strong></li>
-               </ul>
-            </div>
-            <div class="space"></div>
-            <div class="flex-btns">
-               <a class="btn btn-primary" href="https://catchoftheday.localhost/al-john.me">Demo</a>
-               <a class="btn btn-secondary" href="https://github.com/asakasamo/Catch-of-the-Day">Source</a>
-            </div>
-         </div>
-
-         <div class="card">
-            <img class="card-img-top" src="@/assets/projects/prisoner.png" alt="Prisoner's Game of Life" />
-            <div class="card-body bg-light p-3">
-               <h4 class="card-title">Prisoner's Game of Life</h4>
-               <p class="card-text">A 0-player game applying game theory (The Prisoner's Dilemma) to cellular automata (The
+               </ul>`,
+               demoLink: "",
+               srcLink: "https://github.com/asakasamo/Catch-of-the-Day"
+            },
+            {
+               image: require("@/assets/projects/prisoner.png"),
+               title: "Prisoner's Game of Life",
+               desc: `<p class="card-text">A 0-player game applying game theory (The Prisoner's Dilemma) to cellular automata (The
                   Game of Life)</p>
 
                <ul>
@@ -59,24 +94,20 @@
                   <li>Material design using <strong>Vue-bootstrap</strong></li>
                   <li>User input validation using <strong>Vee-validate</strong></li>
                   <li><strong>SCSS</strong> styling with extensive use of <strong>CSS Flexbox</strong></li>
-               </ul>
-            </div>
-            <div class="space"></div>
-            <div class="flex-btns">
-               <a class="btn btn-primary" href="https://prisoner.localhost/al-john.me">Demo</a>
-               <a class="btn btn-secondary" href="https://github.com/asakasamo/prisoners-game-of-life">Source</a>
-            </div>
-         </div>
-
-         <div class="card">
-            <div class="card-img-top" style="position: relative; padding-bottom: 54%;">
+               </ul>`,
+               demoLink: "",
+               srcLink: "https://github.com/asakasamo/prisoners-game-of-life"
+            },
+            {
+               imageHTML: `<div class="card-img-top" style="position: relative; padding-bottom: 54%;">
                <iframe style="position: absolute; top: 0; left: 0; z-index: 0;"
                   src="https://gfycat.com/ifr/AmusingDefenselessCoypu" 
                   width="100%" height="100%" frameborder="0" scrolling="no"
                   allowfullscreen="allowfullscreen">
                </iframe>
-            </div>
-            <div class="card-body bg-light p-3">
+            </div>`,
+               title: "planAmity",
+               desc: `<div class="card-body bg-light p-3">
                <h4 class="card-title">planAmity</h4>
                <p class="card-text">A project planning &amp; management application</p>
 
@@ -86,38 +117,28 @@
                   <li><strong>Unit testing/TDD</strong> using <strong>Groovy</strong></li>
                   <li>Detailed Javadoc documentation!</li>
                </ul>
-            </div>
-            <div class="space"></div>
-            <div class="flex-btns">
-               <a class="btn btn-primary" href="https://gfycat.com/ifr/AmusingDefenselessCoypu">Demo</a>
-               <a class="btn btn-secondary" href="https://github.com/asakasamo/PlanAmity">Source</a>
-            </div>
-         </div>
-
-         <div class="card">
-
-            <img class="card-img-top" src="@/assets/projects/codewars.png" alt="Codewars" />
-            <div class="card-body bg-light p-3">
-               <h4 class="card-title">CodeWars</h4>
-               <p class="card-text">Completing programming challenges to achieve code mastery through challenge!</p>
+            </div>`,
+               demoLink: "https://gfycat.com/ifr/AmusingDefenselessCoypu",
+               srcLink: "https://github.com/asakasamo/PlanAmity"
+            },
+            {
+               image: require("@/assets/projects/codewars.png"),
+               title: "CodeWars",
+               desc: `<p class="card-text">Completing programming challenges to achieve code mastery through challenge!</p>
 
                <ul>
                   <li><strong>Overall Ranking:</strong> 5 kyu</li>
                   <li><strong>Languages Trained:</strong> Javascript, Java</li>
                   <li><strong>Completed Kata:</strong> 26</li>
-               </ul>
-            </div>
-            <div class="space"></div>
-            <div class="flex-btns">
-               <a class="btn btn-primary" href="https://www.codewars.com/users/asakasamo">Profile</a>
-               <a class="btn btn-secondary" href="https://github.com/asakasamo/Coding-Practice">Source (Samples)</a>
-            </div>
-         </div>
-         <div class="card">
-            <img class="card-img-top" src="@/assets/projects/recursion.png" alt="Al-John.me" />
-            <div class="card-body bg-light p-3">
-               <h4 class="card-title">Al-John.me</h4>
-               <p class="card-text">The website you're currently viewing</p>
+               </ul>`,
+               demoLink: "https://www.codewars.com/users/asakasamo",
+               demoText: "Profile",
+               srcLink: "https://github.com/asakasamo/Coding-Practice"
+            },
+            {
+               image: require("@/assets/projects/recursion.png"),
+               title: "Al-John.me",
+               desc: `<p class="card-text">The website you're currently viewing</p>
 
                <ul>
                   <li><strong>Custom Website</strong> built in <strong>Vue</strong></li>
@@ -126,21 +147,34 @@
                      <strong>Bootstrap</strong>, and <strong>Javascript (ES6)</strong>
                   </li>
                   <li>Straightforward &amp; effective UI</li>
-               </ul>
-            </div>
-            <div class="space"></div>
-            <div class="flex-btns">
-               <a class="btn btn-secondary" href="https://github.com/asakasamo/al-john.me.github.io">Source</a>
-            </div>
-         </div>
-      </div>
-   </div>
-</template>
+               </ul>`,
+               demoLink: "",
+               srcLink: "https://github.com/asakasamo/al-john.me.github.io"
+            }
+         ]
+      };
+   },
+   methods: {}
+};
+</script>
+
 
 <style lang="scss" scoped>
+$card-bg: #e3f2fd;
+
 @media (min-width: 900px) {
    #my-work {
       margin-bottom: 30px;
+   }
+   .card {
+      // fade-out
+      transition: 0.03s ease-out;
+      opacity: 0.75;
+   }
+   .card:hover {
+      opacity: 1;
+      // fade-in
+      transition: 0.045s;
    }
 }
 
@@ -152,8 +186,10 @@
 
 .flex-cards {
    display: flex;
-   justify-content: space-around;
    flex-wrap: wrap;
+   // justify-content: space-between;
+   // padding: 0 23px;
+   justify-content: space-around;
    & > * {
       width: 350px;
       margin-top: 20px;
@@ -177,12 +213,16 @@
 .card {
    display: flex;
    flex-direction: column;
+   a.card-content {
+      color: #333;
+   }
 }
 
 .card-body {
    padding: 10px;
    border: 1px solid #ddd;
    border-bottom: none;
+   background-color: $card-bg;
 }
 
 .card-title {
@@ -194,6 +234,7 @@
    flex: 1;
    border: 1px solid #ddd;
    border-top: none;
+   background-color: $card-bg;
 }
 </style>
 
