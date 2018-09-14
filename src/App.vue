@@ -64,7 +64,7 @@ export default {
 
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css?family=Roboto|Ubuntu|Nunito");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,900");
 
 #app {
    overflow: auto;
@@ -105,6 +105,7 @@ $toggle-width: 60px;
 
          .menu-toggle-2 {
             img {
+               transition: 1s;
                opacity: 1;
                &.mirror {
                   opacity: 0;
@@ -143,22 +144,22 @@ a.highlight[href] {
    border-radius: 0;
 }
 
-.btn-primary {
+.btn-primary,
+.btn-primary:active,
+.btn-primary:active:focus,
+.btn-primary:focus,
+.btn-primary:hover {
    color: #fff;
    background-color: $main;
-   border-color: $main;
+   border: 0.5px solid #e6e6e6;
    border-radius: 0;
-   &:hover,
-   &:focus,
-   &:active:hover {
-      border-color: $main;
-   }
+   border-right: none;
 }
 
 .btn-secondary {
    color: #222831;
    background-color: #fff;
-   border-color: #ccc;
+   border-color: #e6e6e6;
    &:hover {
       background-color: #eee;
    }
@@ -244,7 +245,7 @@ $primary: #502302;
       img {
          width: 14.4px;
          height: 18.625px;
-         transition: all ease-in 1s;
+         transition: 2s ease-in;
 
          position: absolute;
          top: ($toggle-height / 2) - (18.625px/2);
