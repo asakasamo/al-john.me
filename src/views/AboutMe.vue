@@ -98,6 +98,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#about {
+   overflow: hidden;
+}
+
 .page-table {
    display: flex;
    flex-direction: column;
