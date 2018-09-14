@@ -39,17 +39,20 @@
                </div>
             </a>
             <div class="space"></div>
-            <div class="flex-btns">
-               <a 
-                  class="btn btn-primary" 
-                  :href="project.demoLink">
-                  {{ project.demoText || 'Demo' }}
-               </a>
-               <a 
-                  class="btn btn-secondary" 
-                  :href="project.srcLink">
-                     Source
-               </a>
+            <div class="flex">
+               <div class="flex-btns">
+                  <a
+                     v-if="project.demoLink"
+                     class="btn btn-primary" 
+                     :href="project.demoLink">
+                     {{ project.demoText || 'Demo' }}
+                  </a>
+                  <a 
+                     class="btn btn-secondary" 
+                     :href="project.srcLink">
+                        Source
+                  </a>
+               </div>
             </div>
 
          </div>
@@ -75,7 +78,7 @@ export default {
                      <li><strong>Responsive</strong> web design using <strong>Vuetify</strong> and <strong>Bootstrap</strong>
                         <strong>4</strong></li>
                   </ul>`,
-               demoLink: "",
+               demoLink: "#",
                srcLink: "https://github.com/asakasamo/DevMeetup"
             },
             {
@@ -89,7 +92,7 @@ export default {
                   <li>Animations using <strong>CSS3</strong> and <strong>React-transition-group</strong></li>
                   <li>Local data storage using <strong>HTML5 Web Storage</strong></li>
                </ul>`,
-               demoLink: "",
+               demoLink: "#",
                srcLink: "https://github.com/asakasamo/Catch-of-the-Day"
             },
             {
@@ -103,7 +106,7 @@ export default {
                   <li>User input validation using <strong>Vee-validate</strong></li>
                   <li><strong>SCSS</strong> styling with extensive use of <strong>CSS Flexbox</strong></li>
                </ul>`,
-               demoLink: "",
+               demoLink: "#",
                srcLink: "https://github.com/asakasamo/prisoners-game-of-life"
             },
             {
@@ -191,12 +194,19 @@ $card-bg: #f5fafd;
    .card {
       // fade-out
       opacity: 0.66;
-      transition: 0.03s ease-out;
+      transition: opacity 0.03s ease-out;
    }
    .card.selected {
       opacity: 1;
       // fade-in
-      transition: 0.045s;
+      transition: opacity 0.045s;
+
+      .card-content {
+         box-shadow: 0 0 15px -3px #999;
+      }
+      .flex-btns {
+         box-shadow: -1.5px 0.5px 15px -3.1px #999;
+      }
    }
 }
 
@@ -225,11 +235,26 @@ $card-bg: #f5fafd;
    border-bottom: none;
 }
 
+.flex {
+   display: flex;
+   justify-content: center;
+}
 .flex-btns {
    display: flex;
    justify-content: center;
    margin-bottom: 10px;
-   margin-top: 5px;
+   margin-top: 8px;
+   a {
+      width: 70px;
+   }
+   a:hover {
+      opacity: 0.86;
+   }
+   a.btn-secondary:hover {
+      opacity: 1;
+      color: #4c4c4c;
+      // color: red;
+   }
 }
 
 .card {
@@ -262,6 +287,7 @@ $card-bg: #f5fafd;
 
 .card-content {
    border: 1px solid #ddd;
+   overflow: hidden;
 }
 </style>
 
