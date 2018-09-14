@@ -27,7 +27,13 @@ $primary: #502302;
 
 @media screen and (max-width: 900px) {
    #page-header {
-      padding-left: 74px !important;
+      padding: 13.5px 0 !important;
+      justify-content: center;
+   }
+
+   #contact #page-header {
+      justify-content: space-between;
+      padding-left: 76px !important;
    }
 }
 </style>
