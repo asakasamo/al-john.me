@@ -84,5 +84,24 @@ a[href] {
 a:hover {
    color: #999;
 }
+
+@media screen and (max-width: 900px) {
+   .page-content {
+      margin-left: -5px;
+      margin-top: -5px;
+   }
+
+   .contact-msg {
+      font-size: 1.55em;
+      margin-bottom: 1em;
+   }
+
+   .contact-links {
+      font-size: 1.23em;
+      p {
+         margin-bottom: 9px;
+      }
+   }
+}
 </style>
 
