@@ -101,7 +101,7 @@ export default {
 .page-table {
    display: flex;
    flex-direction: column;
-   padding: 28px 20px 5px 18px;
+   padding: 28px 20px 25px 18px;
    font-size: 13.35px;
 }
 
@@ -149,6 +149,10 @@ export default {
 }
 
 @media (max-width: 900px) {
+   .page-table {
+      margin-left: 17px;
+      margin-right: -15px;
+   }
    .page-row {
       flex-direction: column;
       .row-title {
@@ -159,9 +163,18 @@ export default {
    }
    .skill-header {
       text-align: center;
+      font-size: 2.1em;
+   }
+   .skill-header-wrap {
+      margin-left: -15px;
    }
    .skills {
       justify-content: space-between;
+      // margin-left: 16.5px;
+      // margin-right: 25px;
+
+      margin-left: 16px;
+      margin-right: 25.5px;
    }
    .dash {
       display: none;

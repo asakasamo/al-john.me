@@ -29,4 +29,11 @@ export default {
       font-weight: bold;
    }
 }
+
+@media screen and (max-width: 900px) {
+   .skill-card img {
+      width: 6.5em;
+      height: 6.5em;
+   }
+}
 </style>
