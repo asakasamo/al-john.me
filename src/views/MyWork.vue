@@ -44,7 +44,8 @@
                   <a
                      v-if="project.demoLink"
                      class="btn btn-primary" 
-                     :href="project.demoLink">
+                     :href="project.demoLink"
+                     target="_blank">
                      {{ project.demoText || 'Demo' }}
                   </a>
                   <a 
@@ -78,7 +79,7 @@ export default {
                      <li><strong>Responsive</strong> web design using <strong>Vuetify</strong> and <strong>Bootstrap</strong>
                         <strong>4</strong></li>
                   </ul>`,
-               demoLink: "#",
+               demoLink: "https://asakasamo.github.io/DevMeetup/",
                srcLink: "https://github.com/asakasamo/DevMeetup"
             },
             {
@@ -92,7 +93,7 @@ export default {
                   <li>Animations using <strong>CSS3</strong> and <strong>React-transition-group</strong></li>
                   <li>Local data storage using <strong>HTML5 Web Storage</strong></li>
                </ul>`,
-               demoLink: "#",
+               demoLink: "https://asakasamo.github.io/Catch-of-the-Day/",
                srcLink: "https://github.com/asakasamo/Catch-of-the-Day"
             },
             {
@@ -106,7 +107,7 @@ export default {
                   <li>User input validation using <strong>Vee-validate</strong></li>
                   <li><strong>SCSS</strong> styling with extensive use of <strong>CSS Flexbox</strong></li>
                </ul>`,
-               demoLink: "#",
+               demoLink: "https://asakasamo.github.io/prisoners-game-of-life/",
                srcLink: "https://github.com/asakasamo/prisoners-game-of-life"
             },
             {
@@ -149,7 +150,6 @@ export default {
                   </li>
                   <li>Straightforward &amp; effective UI</li>
                </ul>`,
-               demoLink: "",
                srcLink: "https://github.com/asakasamo/al-john.me.github.io"
             }
          ]
