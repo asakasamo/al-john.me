@@ -67,6 +67,11 @@ export default {
 // @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,900");
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
+@font-face {
+   font-family: "Wrexham Script";
+   src: url("/assets/fonts/wrexham.ttf");
+}
+
 #app {
    overflow: auto;
    font-family: "Roboto";
