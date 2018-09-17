@@ -22,7 +22,7 @@ $primary: #502302;
    // font-size: 3em;
    // font-weight: bold;
 
-   font-family: "Wrexham Script";
+   font-family: "Wrexham Script", "Roboto";
    font-size: 3.489em;
    padding: 8.5px 34px;
 

@@ -1,0 +1,10 @@
+@font-face {
+   font-family: "WrexhamScript";
+   src: url("WrexhamScript.eot"), url("WrexhamScript.woff") format("woff"),
+      url("WrexhamScript.ttf") format("truetype"),
+      url("WrexhamScript.svg#WrexhamScript") format("svg"),
+      url("WrexhamScript.woff2") format("woff2"),
+      url("WrexhamScript.eot?#iefix") format("embedded-opentype");
+   font-weight: normal;
+   font-style: normal;
+}
