@@ -41,8 +41,8 @@ $primary: #502302;
    }
 
    #contact #page-header {
-      justify-content: space-between;
-      padding-left: 76px !important;
+      justify-content: space-around;
+      // padding-left: 76px !important;
    }
 }
 </style>
