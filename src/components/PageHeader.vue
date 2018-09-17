@@ -16,15 +16,18 @@ $primary: #502302;
 #page-header {
    color: #fafffd;
    background-color: $primary;
+   max-height: 84px;
+   min-height: 84px;
 
    // Roboto dimensions
    // padding: 13.5px 34px;
    // font-size: 3em;
    // font-weight: bold;
 
-   font-family: "Wrexham Script", "Roboto";
+   font-family: "WrexhamScript", "Roboto";
    font-size: 3.489em;
-   padding: 8.5px 34px;
+   padding: 13.5px 34px;
+   line-height: 1;
 
    display: flex;
    align-items: center;
