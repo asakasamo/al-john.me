@@ -41,7 +41,7 @@
 
 <style lang="scss" scoped>
 .page-content {
-   padding: 2.1429em 2.85714em;
+   padding: 23px 39px;
    justify-content: center;
    align-items: center;
    // height: 100vh;
@@ -87,6 +87,7 @@ a:hover {
 
 @media screen and (max-width: 900px) {
    .page-content {
+      padding: 2.1429em 2.85714em;
       margin-left: -5px;
       margin-top: -5px;
    }
