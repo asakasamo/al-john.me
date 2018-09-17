@@ -1,6 +1,6 @@
 <template>
    <div id="my-work">
-      <page-header text="My Work" left-padding="23px"/>
+      <page-header text="My Work"/>
 
       <div class="flex-cards">
          <div 
@@ -187,6 +187,7 @@ export default {
 <style lang="scss" scoped>
 $card-bg: #f5fafd;
 
+// Desktop-only hover effects
 @media (min-width: 900px) {
    #my-work {
       margin-bottom: 30px;
@@ -226,6 +227,7 @@ $card-bg: #f5fafd;
       width: 350px;
       margin-top: 20px;
    }
+   margin-left: -3.5px;
 }
 
 .card-img-top {
