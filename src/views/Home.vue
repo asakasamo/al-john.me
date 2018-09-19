@@ -1,9 +1,9 @@
 <template>
    <div id="home">
       <div class="intro">
-         <h1 class="grabber">Hey, I'm a budding
+         <h1 class="grabber">Hey, I'm a tenacious
             <br>
-            <span class="highlight">Software Engineer!</span>
+            <span class="highlight">Software Developer!</span>
             <br>
          </h1>
 
