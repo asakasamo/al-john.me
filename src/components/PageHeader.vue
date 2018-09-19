@@ -36,13 +36,10 @@ $primary: #502302;
 
 @media screen and (max-width: 900px) {
    #page-header {
-      padding: 13.5px 0 !important;
+      // padding: 13.5px 0 !important;
+      padding: 0;
       justify-content: center;
-   }
-
-   #contact #page-header {
-      justify-content: space-around;
-      // padding-left: 76px !important;
+      align-items: center;
    }
 }
 </style>
