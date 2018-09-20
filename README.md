@@ -1,6 +1,7 @@
-# website
+# [Al-John.me](https://al-john.me) - My portfolio website
+Custom built with Vue, HTML5, CSS3, Javascript
 
-## Project setup
+## Local project setup
 ```
 npm install
 ```
@@ -19,3 +20,7 @@ npm run build
 ```
 npm run lint
 ```
+
+## Tools used
+- [GitHub Pages](https://pages.github.com) - Free hosting, directly from the repository!
+- [Vue-gh-pages](https://www.npmjs.com/package/vue-gh-pages) - A clean way of deploying to Github Pages
